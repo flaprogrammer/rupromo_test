@@ -1,0 +1,103 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$header-glass-name: 'header_glass';
+$header-glass-x: 0px;
+$header-glass-y: 0px;
+$header-glass-offset-x: 0px;
+$header-glass-offset-y: 0px;
+$header-glass-width: 29px;
+$header-glass-height: 16px;
+$header-glass-total-width: 332px;
+$header-glass-total-height: 128px;
+$header-glass-image: '../img/sprite.png';
+$header-glass: (0px, 0px, 0px, 0px, 29px, 16px, 332px, 128px, '../img/sprite.png', 'header_glass', );
+$header-loupe-name: 'header_loupe';
+$header-loupe-x: 0px;
+$header-loupe-y: 19px;
+$header-loupe-offset-x: 0px;
+$header-loupe-offset-y: -19px;
+$header-loupe-width: 28px;
+$header-loupe-height: 27px;
+$header-loupe-total-width: 332px;
+$header-loupe-total-height: 128px;
+$header-loupe-image: '../img/sprite.png';
+$header-loupe: (0px, 19px, 0px, -19px, 28px, 27px, 332px, 128px, '../img/sprite.png', 'header_loupe', );
+$logo-name: 'logo';
+$logo-x: 0px;
+$logo-y: 49px;
+$logo-offset-x: 0px;
+$logo-offset-y: -49px;
+$logo-width: 332px;
+$logo-height: 79px;
+$logo-total-width: 332px;
+$logo-total-height: 128px;
+$logo-image: '../img/sprite.png';
+$logo: (0px, 49px, 0px, -49px, 332px, 79px, 332px, 128px, '../img/sprite.png', 'logo', );
+$spritesheet-width: 332px;
+$spritesheet-height: 128px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($header-glass, $header-loupe, $logo, );
+$spritesheet: (332px, 128px, '../img/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

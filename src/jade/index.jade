@@ -1,0 +1,53 @@
+doctype html
+html(lang='ru')
+	head
+		meta(charset='UTF-8')
+		title Результаты поиска
+		link(rel='stylesheet', type='text/css', href='css/style.css')
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext', rel='stylesheet', type='text/css')
+	body.search_results
+		include ./include/header
+		.top_block
+			.width_container.clearfix
+				i.icon-logo
+				.right_block
+					span Ваш регион
+					select
+						option 15 - Республика Северная Осетия - Алания
+						option 16 - Республика Северная Осетия - Алания
+						option 17 - Республика Северная Осетия - Алания
+		.main
+			.width_container
+				h4 Главная страница
+				h1 Результаты поиска
+				input.search_text(type="text", value="беременность")
+				button.loupe_wrapper
+					i.icon-header_loupe
+				span.extended_search Расширенный поиск
+				.search_phrase беременность
+				.result_count Результат поиска:&nbsp;
+					span.num 4506
+
+				.filters
+					label
+						input(type="radio", name='category')
+						| Все&nbsp;
+						span.count (453)
+					label
+						input(type="radio", name='category')
+						| Пособия&nbsp;
+						span.count (231)
+					label
+						input(type="radio", name='category')
+						| Страницы&nbsp;
+						span.count (23)
+					label
+						input(type="radio", name='category')
+						| Документы&nbsp;
+						span.count (187)
+					label
+						input(type="radio", name='category')
+						| Новости&nbsp;
+						span.count (83)
+
+		footer

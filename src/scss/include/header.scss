@@ -1,0 +1,55 @@
+header {
+	height: 70px;
+	background: $header_back_color;
+	color: $header_text_color;
+	position: relative;
+
+	.nav {
+		float: left;
+		height: 70px;
+		padding: 21px 0px;
+		display: inline-block;
+
+
+		li {
+			display: inline-block;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+		li+li {
+			margin-left: 10px;
+		}
+	}
+	
+	.right_block {
+		float: right;
+		text-align: right;
+
+		.version {
+			font-size: 14px;
+
+			height: 70px;
+			display: inline-block;
+			vertical-align: top;
+			padding-top: 20px;
+
+			span {
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+		}
+		
+		.loupe_wrapper {
+			height: 70px;
+			width: 70px;
+			display: inline-block;
+			padding: 20px;
+			border-left: 1px solid #8e8e8f;
+			border-right: 1px solid #8e8e8f;
+		}
+	}
+
+
+}

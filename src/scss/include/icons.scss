@@ -1,0 +1,25 @@
+@mixin spriteX($sprite) {
+	@include sprite-position($sprite);
+	@include sprite-width($sprite);
+	@include sprite-height($sprite);
+}
+
+
+i[class^='icon-'] {
+	display: inline-block;
+	background-image: url($spritesheet-image);
+}
+
+i.icon- {
+
+	&header_glass {
+		@include spriteX($header_glass);
+	}
+	&header_loupe {
+		@include spriteX($header_loupe);
+	}
+	&logo {
+		@include spriteX($logo);
+	}
+
+}

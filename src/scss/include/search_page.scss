@@ -1,0 +1,97 @@
+.top_block {
+	height: 232px;
+	font-size: 14px;
+	.icon-logo {
+		margin-top: 70px;
+		margin-left: -15px;
+	}
+
+	.right_block {
+		float: right;
+		margin-top: 80px;
+
+		select {
+			width: 380px;
+			height: 50px;
+			margin-left: 10px;
+		}
+	}
+
+}
+
+.main {
+	margin-bottom: 50px;
+
+	h4 {
+		font-size: 12px;
+		color: #58595b;
+		font-weight: normal;
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	.search_text {
+		height: 70px;
+		width: 870px;
+		font-size: 16px;
+		padding-left: 40px;
+	}
+	
+	.loupe_wrapper {
+		float: right;
+		background: #34baed;
+		width: 70px;
+		height: 70px;
+		border: 1px solid #60c8f0;
+		padding: 20px;
+	}
+
+	span.extended_search {
+		font-size: 12px;
+		color: #34bbed;
+		float: right;
+		margin-top: 10px;
+		text-decoration: underline;
+	}
+
+	.search_phrase {
+		margin-top: 50px;
+		font-size: 28px;
+		font-weight: bold;
+
+		&:before {
+			content: '«';
+		}
+		&:after {
+			content: '»';
+		}
+
+	}
+
+	.result_count {
+		font-size: 14px;
+		margin-bottom: 40px;
+	}
+	
+	.filters {
+		height: 65px;
+		border-top: 1px solid #d8dadd;
+		border-bottom: 1px solid #d8dadd;
+		padding: 18px 0;
+		font-size: 12px;
+
+		label {
+			vertical-align: top;
+		}
+		
+		label+label {
+			margin-left: 20px;
+		}
+
+		.count {
+			color: #58595b;
+		}
+	}
+}

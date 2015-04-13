@@ -1,0 +1,9 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: $body_back_color;
+}
+
+.width_container {
+	width: $container_width;
+	margin: 0 auto;
+}
